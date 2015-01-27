@@ -5,6 +5,7 @@
 FROM ubuntu:12.04
 
 # old MAINTAINER Wiliam Souza <wiliamsouza83@gmail.com>
+MAINTAINER LoreLLo <lorenzo.salvadorini@softecspa.it>
 
 # base
 ENV LANG en_US.UTF-8
@@ -39,3 +40,4 @@ RUN apt-get install memcached -y
 RUN update-rc.d -f memcached disable
 
 EXPOSE 11211
+
