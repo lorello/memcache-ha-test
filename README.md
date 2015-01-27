@@ -1,5 +1,16 @@
+memcache-ha-test
+------------------
+
+To run my test:
+
+    docker build -t wiliamsouza/memcached .
+    fig up
+    sudo apt-get install php5-cli php5-memcache && php5enmod memcache
+
+Original readme follow
+
 docker-memcached
----------------
+================
 
 Docker memcached server generic image source. This is based on `ubuntu:12.04` image.
 
@@ -44,4 +55,3 @@ $ docker run --name memcached -p 11211:11211 -d \
 ```
 
 The command above will start a container and return its ID.
-# memcache-ha-test
