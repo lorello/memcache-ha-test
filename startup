@@ -1,0 +1,27 @@
+#!/bin/bash -e
+
+GROUP="memcache"
+USER="memcache"
+DATADIR="/nonexistent"
+
+# creating memcache group if it isn't already there
+if ! getent group $GROUP >/dev/null ; then
+        # Adding system group
+        addgroup --system $GROUP >/dev/null
+fi
+
+# creating memcache user if it isn't already there
+if ! getent passwd $USER >/dev/null ; then
+        # Adding system user
+        adduser \
+          --system \
+          --disabled-login \
+          --no-create-home \
+          --ingroup $GROUP \
+          --home $DATADIR \
+          --gecos "Memcached" \
+          --shell /bin/false \
+          $USER  >/dev/null
+fi
+
+exec supervisord

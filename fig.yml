@@ -1,0 +1,8 @@
+memcached1:
+  image: wiliamsouza/memcached
+  ports:
+    - "11230:11211"
+memcached2:
+  image: wiliamsouza/memcached
+  ports:
+    - "11240:11211"
